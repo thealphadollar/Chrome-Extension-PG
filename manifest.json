@@ -1,0 +1,31 @@
+{
+    "name": "Chrome Extension PG",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "An extension to learn developing chrome extensions.\n",
+    "icons": {
+        "128": "icons/128x128.png",
+        "48": "icons/48x48.png",
+        "16": "icons/16x16.png"
+    },
+    "omnibox": {
+        "keyword": "yeah"
+    },
+    "browser_action": {
+        "default_icon": "icons/38x38.png",
+        "default_popup": "html/popup.html",
+        "default_title": "Chrome Extension PG"
+    },
+    "background": {
+        "scripts": ["scripts/background.js"],
+        "persistent": false
+    },
+    "chrome_url_overrides": {
+        "newtab": "html/newtab.html"
+    },
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["scripts/content.js"]
+    }],
+    "devtools_page": "html/devtools.html"
+}
